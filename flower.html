@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hoa Đẹp 20/10</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ffe6f0, #fff0f6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #d6336c;
+    overflow: hidden;
+  }
+  h1 {
+    margin-bottom: 0.2em;
+  }
+  .flower {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: pulse 2.5s infinite ease-in-out;
+  }
+  /* Cánh hoa */
+  .petal {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle at center, #ff4d6d, #a9003f);
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    transform-origin: bottom center;
+    box-shadow: 0 0 10px #ff4d6d88;
+    animation: petal-flicker 3s infinite alternate;
+  }
+  .petal:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%) rotate(0deg); animation-delay: 0s;}
+  .petal:nth-child(2) { top: 20px; right: 0; transform: rotate(72deg); animation-delay: 0.5s;}
+  .petal:nth-child(3) { bottom: 20px; right: 10px; transform: rotate(144deg); animation-delay: 1s;}
+  .petal:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%) rotate(216deg); animation-delay: 1.5s;}
+  .petal:nth-child(5) { bottom: 20px; left: 10px; transform: rotate(288deg); animation-delay: 2s;}
+  /* Trung tâm hoa */
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at center, #ff2a55, #7a002e);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff2a5588;
+    transform: translate(-50%, -50%);
+    animation: center-glow 2.5s infinite ease-in-out;
+  }
+  /* Lá */
+  .leaf {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(45deg, #37b24d, #1e7e34);
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    box-shadow: 0 0 10px #1e7e3488;
+    animation: leaf-sway 3s infinite ease-in-out alternate;
+  }
+  .leaf.left {
+    bottom: 10px;
+    left: 10px;
+    transform-origin: top right;
+    animation-delay: 0s;
+  }
+  .leaf.right {
+    bottom: 10px;
+    right: 10px;
+    transform-origin: top left;
+    animation-delay: 1.5s;
+  }
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+  }
+  @keyframes petal-flicker {
+    0% { box-shadow: 0 0 5px #ff4d6d88;}
+    100% { box-shadow: 0 0 20px #ff4d6dcc;}
+  }
+  @keyframes center-glow {
+    0%, 100% { box-shadow: 0 0 20px #ff2a5588;}
+    50% { box-shadow: 0 0 40px #ff2a55cc;}
+  }
+  @keyframes leaf-sway {
+    0% { transform: rotate(5deg);}
+    100% { transform: rotate(-5deg);}
+  }
+
+  /* Message */
+  .message {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 300px;
+    line-height: 1.4;
+    color: #a6003b;
+  }
+</style>
+</head>
+<body>
+
+<div class="flower" aria-label="Bông hoa đẹp mắt">
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="center"></div>
+  <div class="leaf left"></div>
+  <div class="leaf right"></div>
+</div>
+
+<div class="message">
+  💐 Chúc em 20/10 thật nhiều niềm vui và hạnh phúc! 💖<br>
+  <small>From: Ai đó luôn yêu em thật nhiều.</small>
+</div>
+
+</body>
+</html>
+
