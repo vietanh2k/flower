@@ -3,127 +3,194 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hoa Đẹp 20/10</title>
+<title>Chúc mừng 20/10</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700&display=swap');
+
   body {
-    background: linear-gradient(135deg, #ffe6f0, #fff0f6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #d6336c;
+    background: radial-gradient(circle at center, #1a1a1a, #000000);
+    color: #FFD700;
+    font-family: 'Montserrat', sans-serif;
     overflow: hidden;
-  }
-  h1 {
-    margin-bottom: 0.2em;
-  }
-  .flower {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     position: relative;
-    width: 150px;
-    height: 150px;
-    animation: pulse 2.5s infinite ease-in-out;
-  }
-  /* Cánh hoa */
-  .petal {
-    position: absolute;
-    width: 50px;
-    height: 70px;
-    background: radial-gradient(circle at center, #ff4d6d, #a9003f);
-    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-    transform-origin: bottom center;
-    box-shadow: 0 0 10px #ff4d6d88;
-    animation: petal-flicker 3s infinite alternate;
-  }
-  .petal:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%) rotate(0deg); animation-delay: 0s;}
-  .petal:nth-child(2) { top: 20px; right: 0; transform: rotate(72deg); animation-delay: 0.5s;}
-  .petal:nth-child(3) { bottom: 20px; right: 10px; transform: rotate(144deg); animation-delay: 1s;}
-  .petal:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%) rotate(216deg); animation-delay: 1.5s;}
-  .petal:nth-child(5) { bottom: 20px; left: 10px; transform: rotate(288deg); animation-delay: 2s;}
-  /* Trung tâm hoa */
-  .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle at center, #ff2a55, #7a002e);
-    border-radius: 50%;
-    box-shadow: 0 0 20px #ff2a5588;
-    transform: translate(-50%, -50%);
-    animation: center-glow 2.5s infinite ease-in-out;
-  }
-  /* Lá */
-  .leaf {
-    position: absolute;
-    width: 40px;
-    height: 60px;
-    background: linear-gradient(45deg, #37b24d, #1e7e34);
-    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-    box-shadow: 0 0 10px #1e7e3488;
-    animation: leaf-sway 3s infinite ease-in-out alternate;
-  }
-  .leaf.left {
-    bottom: 10px;
-    left: 10px;
-    transform-origin: top right;
-    animation-delay: 0s;
-  }
-  .leaf.right {
-    bottom: 10px;
-    right: 10px;
-    transform-origin: top left;
-    animation-delay: 1.5s;
-  }
-  /* Animations */
-  @keyframes pulse {
-    0%, 100% { transform: scale(1);}
-    50% { transform: scale(1.05);}
-  }
-  @keyframes petal-flicker {
-    0% { box-shadow: 0 0 5px #ff4d6d88;}
-    100% { box-shadow: 0 0 20px #ff4d6dcc;}
-  }
-  @keyframes center-glow {
-    0%, 100% { box-shadow: 0 0 20px #ff2a5588;}
-    50% { box-shadow: 0 0 40px #ff2a55cc;}
-  }
-  @keyframes leaf-sway {
-    0% { transform: rotate(5deg);}
-    100% { transform: rotate(-5deg);}
   }
 
-  /* Message */
-  .message {
-    margin-top: 30px;
-    font-size: 1.3rem;
-    text-align: center;
-    max-width: 300px;
-    line-height: 1.4;
-    color: #a6003b;
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+    text-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px #FFA500,
+      0 0 40px #FFA500,
+      0 0 50px #FFD700;
+    animation: glow 2.5s ease-in-out infinite alternate;
+    margin-bottom: 0.2em;
+    z-index: 10;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 0.2em 0 1em 0;
+    color: #FFC107;
+    text-shadow: 0 0 10px #FFC107;
+    z-index: 10;
+  }
+
+  p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 2em auto;
+    color: #FFF8DC;
+    text-shadow: 0 0 5px #FFA500;
+    z-index: 10;
+  }
+
+  .hearts {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    animation: float 6s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  .heart {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at center, #FF4081, #C2185B);
+    clip-path: polygon(
+      50% 15%, 
+      85% 0%, 
+      100% 30%, 
+      75% 65%, 
+      50% 100%, 
+      25% 65%, 
+      0% 30%, 
+      15% 0%
+    );
+    filter: drop-shadow(0 0 6px #FF4081);
+    animation: beat 1.5s infinite;
+  }
+
+  .heart:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .heart:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  /* Hoa nhỏ rơi */
+  .flower {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at center, #FFB6C1, #FF69B4);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 2px #FF69B4);
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(110vh) translateX(30px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow:
+        0 0 10px #FFD700,
+        0 0 20px #FFD700,
+        0 0 30px #FFA500,
+        0 0 40px #FFA500,
+        0 0 50px #FFD700;
+    }
+    100% {
+      text-shadow:
+        0 0 20px #FFD700,
+        0 0 30px #FFD700,
+        0 0 40px #FFA500,
+        0 0 50px #FFA500,
+        0 0 60px #FFD700;
+    }
+  }
+
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-15px);
+    }
   }
 </style>
 </head>
 <body>
+  <h1>🎉20/10/2025🎉</h1>
+  <h2>Gửi bé Song Linh!💖</h2>
+  
+  <p>Chúc em! Cô gái của anh có một ngày 20/10 thật ý nghĩa, luôn xinh đẹp, vui vẻ, hạnh phúc và gặp nhiều may mắn. Luôn bên cạnh anh và yêu thương anh nhiều hơn nhé. Chúc những điều tốt đẹp nhất sẽ đến với em.💕</p>
+  <p><strong>Yêu em rất nhiều! 😘</strong></p>
 
-<div class="flower" aria-label="Bông hoa đẹp mắt">
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="center"></div>
-  <div class="leaf left"></div>
-  <div class="leaf right"></div>
-</div>
+  <div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
 
-<div class="message">
-  💐 Chúc em 20/10 thật nhiều niềm vui và hạnh phúc! 💖<br>
-  <small>From: Ai đó luôn yêu em thật nhiều.</small>
-</div>
+  <!-- Tạo nhiều bông hoa rơi -->
+  <script>
+    const flowerCount = 80;
+    for (let i = 0; i < flowerCount; i++) {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + 'vw';
 
+      const size = 10 + Math.random() * 10;
+      flower.style.width = size + 'px';
+      flower.style.height = size + 'px';
+
+      flower.style.opacity = 0.5 + Math.random() * 0.5;
+
+      const duration = 5 + Math.random() * 7;
+      flower.style.animationDuration = duration + 's';
+
+      // animationDelay âm để hoa rơi đã diễn ra trước đó khi trang load
+      flower.style.animationDelay = (-Math.random() * duration) + 's';
+
+      flower.style.top = (Math.random() * -90 - 10) + 'px';
+
+      document.body.appendChild(flower);
+    }
+  </script>
 </body>
 </html>
-
